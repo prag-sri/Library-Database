@@ -1,9 +1,6 @@
-package com.example.librarydb;
+package com.example.librarydb.Models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="book_table")
@@ -19,6 +16,10 @@ public class Book {
     public Book(){
 
     }
+
+    @ManyToOne
+    @JoinColumn
+    private Student student;
 
     public Book(int id, String name, int pages, String author) {
         this.id = id;

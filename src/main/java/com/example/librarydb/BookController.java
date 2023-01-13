@@ -1,5 +1,6 @@
 package com.example.librarydb;
 
+import com.example.librarydb.Models.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,8 +34,8 @@ public class BookController {
     }
 
     //list of book names inside db
-    @GetMapping("/get_books_names")
-    public List<ResponseObj> getBookNames(){
-        return bookService.getBookNames();
+    @GetMapping("/get_books_names_and_authors")
+    public List<ResponseObj> getBookNamesAndAuthors(){
+        return bookService.getBookNamesAndAuthors();
     }
 }

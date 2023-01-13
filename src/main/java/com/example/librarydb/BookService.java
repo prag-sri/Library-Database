@@ -1,10 +1,10 @@
 package com.example.librarydb;
 
+import com.example.librarydb.Models.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.Optional;
 
 @Service
 public class BookService{
@@ -31,7 +31,7 @@ public class BookService{
         bookRepository.save(bookToBeUpdated);
     }
 
-    public List<ResponseObj> getBookNames(){
+    public List<ResponseObj> getBookNamesAndAuthors(){
         List<ResponseObj> result= new ArrayList<>();
         for(Book book: bookRepository.findAll())
         {
